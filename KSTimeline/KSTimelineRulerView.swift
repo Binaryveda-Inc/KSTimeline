@@ -96,13 +96,15 @@ import UIKit
 
         let unit_minute_height = unit_hour_height / 2
 
-        let unit_sec_height = unit_minute_height / 2
+//        let unit_sec_height = unit_minute_height / 2
+        
+        let unit_sec_height = CGFloat(10.0)
 
         let show_hour = unit_hour_width > 10 ? true : false
 
         let show_minute = unit_minute_width > 10 ? true : false
 
-        let show_second = unit_second_width > 10 ? true : false
+        let show_second = unit_second_width > 20 ? true : false
 
         let unit_gap_height = CGFloat(20)
 
@@ -118,7 +120,8 @@ import UIKit
         
         let text_height = CGFloat(12)
         
-        UIColor.lightGray.setFill()
+        UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 1.0).setFill()
+        UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 10.0))
 
         if show_hour == true {
 
@@ -126,11 +129,17 @@ import UIKit
 
                 let hour_x = CGFloat(hour) * unit_hour_width + extra_padding
 
-                let hour_y = rect.size.height - unit_hour_height
+                let hour_y = rect.size.height - unit_sec_height
 
                 UIColor.lightGray.setFill()
 
-                UIRectFill(CGRect(x: hour_x, y: hour_y - unit_gap_height, width: 1, height: unit_hour_height))
+                UIRectFill(CGRect(x: hour_x, y: hour_y - unit_gap_height, width: 1, height: unit_sec_height))
+                
+                let text_x = hour_x - (text_width / 2)
+
+                let text_y = rect.size.height - 14.0
+
+                (String(format: "%02d:00", hour) as NSString).draw(in: CGRect(x: text_x, y: text_y, width: text_width, height: text_height), withAttributes: textFontAttributes)
 
                 if show_minute == true {
 
@@ -139,10 +148,6 @@ import UIKit
                         let minute_x = CGFloat(minute) * unit_minute_width
 
                         let minute_y = rect.size.height - unit_minute_height
-
-                        UIColor.lightGray.setFill()
-
-                        UIRectFill(CGRect(x: hour_x + minute_x, y: minute_y - unit_gap_height, width: 1, height: unit_minute_height))
 
                         if show_second == true {
 
@@ -154,7 +159,7 @@ import UIKit
 
                                 UIColor.lightGray.setFill()
 
-                                UIRectFill(CGRect(x: hour_x + minute_x + second_x, y: second_y - unit_gap_height, width: 1, height: unit_sec_height))
+                                UIRectFill(CGRect(x: hour_x + minute_x + second_x, y: hour_y - unit_gap_height, width: 1, height: unit_sec_height))
 
                             }
 
@@ -162,11 +167,17 @@ import UIKit
                         
                         if unit_minute_width > text_width {
                             
+                            UIColor.lightGray.setFill()
+
+                            UIRectFill(CGRect(x: hour_x + minute_x, y: hour_y - unit_gap_height, width: 1, height: unit_sec_height))
+                            
                             let text_x = hour_x + minute_x - (text_width / 2)
                             
-                            let text_y = rect.size.height - 17
+                            let text_y = rect.size.height - 14.0
                             
-                            (String(format: "%02d:%02d", hour, minute*10) as NSString).draw(in: CGRect(x: text_x, y: text_y, width: text_width, height: text_height), withAttributes: textFontAttributes)
+//                            DispatchQueue.main.async {
+                                (String(format: "%02d:%02d", hour, minute*10) as NSString).draw(in: CGRect(x: text_x, y: text_y, width: text_width, height: text_height), withAttributes: textFontAttributes)
+//                            }
                             
                         }
 
@@ -174,19 +185,13 @@ import UIKit
 
                 }
 
-                let text_x = hour_x - (text_width / 2)
-
-                let text_y = rect.size.height - 17
-
-                (String(format: "%02d:00", hour) as NSString).draw(in: CGRect(x: text_x, y: text_y, width: text_width, height: text_height), withAttributes: textFontAttributes)
-
             }
 
-            UIColor.lightGray.setFill()
-
-            UIRectFill(CGRect(x: extra_padding, y: 0, width: rect.size.width - extra_padding*2, height: 0.5))
-
-            UIRectFill(CGRect(x: extra_padding, y: rect.size.height - 20, width: rect.size.width - extra_padding*2, height: 0.5))
+//            UIColor.white.setFill()
+//
+//            UIRectFill(CGRect(x: extra_padding, y: 0, width: rect.size.width - extra_padding*2, height: 0.5))
+//
+//            UIRectFill(CGRect(x: extra_padding, y: rect.size.height - 20, width: rect.size.width - extra_padding*2, height: 0.5))
 
         }
         

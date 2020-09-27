@@ -317,27 +317,29 @@ extension UIScreen {
     
     internal func setupCurrentIndicator() {
         
-        let triangle = UIBezierPath()
+        let triangle = UIBezierPath(roundedRect: CGRect(x: -1.5, y: 2.0, width: 3.0, height: self.bounds.height - 17.0), byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 1.5, height: 1.5))
         
-        triangle.move(to: CGPoint(x: -5, y: 0))
+//        triangle.move(to: CGPoint(x: -0.5, y: 0))
+//
+//        triangle.addLine(to: CGPoint(x: 0.5, y: 0))
+//
+//        triangle.addLine(to: CGPoint(x: 0, y: 10))
+//
+//        triangle.close()
         
-        triangle.addLine(to: CGPoint(x: 5, y: 0))
-        
-        triangle.addLine(to: CGPoint(x: 0, y: 10))
-        
-        triangle.close()
-        
-        let line = CALayer()
-        
-        line.frame = CGRect(x: -0.5, y: 0, width: 1, height: self.bounds.height)
-        
-        line.backgroundColor = UIColor.red.cgColor
+//        let line = CALayer()
+//
+//        line.frame = CGRect(x: 0, y: 0, width: 3.0, height: self.bounds.height - 15.0)
+//
+//        line.cornerRadius = 1.0
+//
+//        line.backgroundColor = UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).cgColor
         
         self.currentIndicator.path = triangle.cgPath
+
+        self.currentIndicator.fillColor = UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).cgColor
         
-        self.currentIndicator.fillColor = UIColor.red.cgColor
-        
-        self.currentIndicator.addSublayer(line)
+//        self.currentIndicator.addSublayer(line)
         
         self.layer.addSublayer(self.currentIndicator)
         
