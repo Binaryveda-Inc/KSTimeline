@@ -70,9 +70,9 @@ import UIKit
 
             let end_x = (unit_hour_width * CGFloat(end_hour)) + (unit_minute_width * CGFloat(end_minute)) + (unit_second_width * CGFloat(end_second)) + (padding / 2)
             
-            UIColor.blue.setFill()
+            UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).setFill()
             
-            UIRectFill(CGRect(x: start_x, y: rect.size.height - wave_height - unit_gap_height, width: end_x - start_x, height: wave_height))
+            UIRectFill(CGRect(x: start_x, y: rect.size.height - 10.0 - unit_gap_height, width: end_x - start_x, height: 10.0))
             
         }
         
@@ -120,7 +120,7 @@ import UIKit
         
         let text_height = CGFloat(12)
         
-        UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 1.0).setFill()
+        UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
         UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 10.0))
 
         if show_hour == true {
