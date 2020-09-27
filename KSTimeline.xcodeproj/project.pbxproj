@@ -92,7 +92,7 @@
 		514A31571FE115C300795B16 = {
 			isa = PBXGroup;
 			children = (
-				514A317B1FE115F900795B16 /* KSTimeline */,
+				514A317B1FE115F900795B16 /* Classes */,
 				514A31621FE115C300795B16 /* KSTimelineDemo */,
 				514A31611FE115C300795B16 /* Products */,
 			);
@@ -125,7 +125,7 @@
 			path = KSTimelineDemo;
 			sourceTree = "<group>";
 		};
-		514A317B1FE115F900795B16 /* KSTimeline */ = {
+		514A317B1FE115F900795B16 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				514A31881FE1163D00795B16 /* KSTimelineContentView.swift */,
@@ -134,7 +134,7 @@
 				514A317C1FE115F900795B16 /* KSTimeline.h */,
 				514A317D1FE115F900795B16 /* Info.plist */,
 			);
-			path = KSTimeline;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
