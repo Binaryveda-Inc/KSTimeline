@@ -111,9 +111,9 @@ import UIKit
         let extra_padding = padding / 2
         
         let textFontAttributes = [
-            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12),
-            NSAttributedStringKey.foregroundColor: UIColor.lightGray,
-            NSAttributedStringKey.paragraphStyle: NSParagraphStyle.default
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+            NSAttributedString.Key.foregroundColor: UIColor.lightGray,
+            NSAttributedString.Key.paragraphStyle: NSParagraphStyle.default
         ]
         
         let text_width = CGFloat(36)
