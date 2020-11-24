@@ -72,7 +72,7 @@ import UIKit
             
             UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).setFill()
             
-            UIRectFill(CGRect(x: start_x, y: rect.size.height - 28.0 - unit_gap_height, width: end_x - start_x, height: 28.0))
+            UIRectFill(CGRect(x: start_x, y: rect.size.height - 10.0 - unit_gap_height, width: end_x - start_x, height: 10.0))
             
         }
         
@@ -98,7 +98,7 @@ import UIKit
 
 //        let unit_sec_height = unit_minute_height / 2
         
-        let unit_sec_height = CGFloat(28.0)
+        let unit_sec_height = CGFloat(10.0)
 
         let show_hour = unit_hour_width > 10 ? true : false
 
@@ -111,9 +111,9 @@ import UIKit
         let extra_padding = padding / 2
         
         let textFontAttributes = [
-            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
-            NSAttributedString.Key.foregroundColor: UIColor.lightGray,
-            NSAttributedString.Key.paragraphStyle: NSParagraphStyle.default
+            NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12),
+            NSAttributedStringKey.foregroundColor: UIColor.lightGray,
+            NSAttributedStringKey.paragraphStyle: NSParagraphStyle.default
         ]
         
         let text_width = CGFloat(36)
@@ -121,7 +121,7 @@ import UIKit
         let text_height = CGFloat(12)
         
         UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
-        UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 28.0))
+        UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 10.0))
 
         if show_hour == true {
 

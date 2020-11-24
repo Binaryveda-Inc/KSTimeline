@@ -337,9 +337,7 @@ extension UIScreen {
         
         self.currentIndicator.path = triangle.cgPath
 
-//        self.currentIndicator.fillColor = UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).cgColor
-        self.currentIndicator.fillColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
-
+        self.currentIndicator.fillColor = UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).cgColor
         
 //        self.currentIndicator.addSublayer(line)
         
