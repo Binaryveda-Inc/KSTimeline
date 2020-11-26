@@ -30,6 +30,8 @@ import UIKit
         
     }
     
+    var isDisabled = false
+    
     internal func drawEvent(rect: CGRect) {
         
         guard let dataSource = self.dataSource else { return }
@@ -120,7 +122,11 @@ import UIKit
         
         let text_height = CGFloat(12)
         
-        UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
+        if(self.isDisabled){
+            UIColor(red: 232.0/255.0, green: 232.0/255.0, blue: 232.0/255.0, alpha: 0.7).setFill()
+        }else{
+            UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
+        }
         UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 28.0))
 
         if show_hour == true {
@@ -227,6 +233,16 @@ import UIKit
         
         super.prepareForInterfaceBuilder()
         
+    }
+    
+    public func disableView(){
+        self.isDisabled = true
+        self.layoutSubviews()
+    }
+    
+    public func enableView(){
+        self.isDisabled = false
+        self.layoutSubviews()
     }
 
 }
