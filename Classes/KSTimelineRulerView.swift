@@ -32,6 +32,8 @@ import UIKit
         
     }
     
+    var isDisabled = false
+    
     internal func drawEvent(rect: CGRect) {
         
         guard let dataSource = self.dataSource else { return }
@@ -81,7 +83,7 @@ import UIKit
                     UIColor(red: 248.0/255.0, green: 219.0/255.0, blue: 158.0/255.0, alpha: 1.0).setFill()
             }
             
-            UIRectFill(CGRect(x: start_x, y: rect.size.height - 10.0 - unit_gap_height, width: end_x - start_x, height: 10.0))
+            UIRectFill(CGRect(x: start_x, y: rect.size.height - 28.0 - unit_gap_height, width: end_x - start_x, height: 28.0))
             
         }
         
@@ -107,7 +109,7 @@ import UIKit
 
 //        let unit_sec_height = unit_minute_height / 2
         
-        let unit_sec_height = CGFloat(10.0)
+        let unit_sec_height = CGFloat(28.0)
 
         let show_hour = unit_hour_width > 10 ? true : false
 
@@ -137,7 +139,16 @@ import UIKit
                 UIColor(red: 250.0/255.0, green: 234.0/255.0, blue: 200.0/255.0, alpha: 0.7).setFill()
         }
         
+<<<<<<< HEAD
         UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 10.0))
+=======
+        if(self.isDisabled){
+            UIColor(red: 232.0/255.0, green: 232.0/255.0, blue: 232.0/255.0, alpha: 0.7).setFill()
+        }else{
+            UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
+        }
+        UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 28.0))
+>>>>>>> 58ec4f7914686fa6aecf1e9ee0b4d99a19814e0d
 
         if show_hour == true {
 
@@ -243,6 +254,16 @@ import UIKit
         
         super.prepareForInterfaceBuilder()
         
+    }
+    
+    public func disableView(){
+        self.isDisabled = true
+        self.layoutSubviews()
+    }
+    
+    public func enableView(){
+        self.isDisabled = false
+        self.layoutSubviews()
     }
 
 }

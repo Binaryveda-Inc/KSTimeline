@@ -71,5 +71,15 @@ import UIKit
         self.rulerView.drawWave = true
         
     }
+    
+    public func disableView(){
+        self.isScrollEnabled = false
+        self.rulerView.disableView()
+    }
+    
+    public func enableView(){
+        self.isScrollEnabled = true
+        self.rulerView.enableView()
+    }
         
 }

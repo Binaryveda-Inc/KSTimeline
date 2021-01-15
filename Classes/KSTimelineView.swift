@@ -128,6 +128,16 @@ extension UIScreen {
     
     // MARK: Public Methods
     
+    public func disableView(){
+        self.contentView.disableView()
+        self.currentIndicator.removeFromSuperlayer()
+    }
+    
+    public func enableView(){
+        self.contentView.enableView()
+        self.setupCurrentIndicator()
+    }
+    
     public func scrollToDate(date: Date) {
         
         let hour = Calendar.current.component(.hour, from: date)
@@ -316,37 +326,16 @@ extension UIScreen {
         self.contentView.bounces = false
         
         self.setupCurrentIndicator()
+        self.enableView()
         
     }
     
     internal func setupCurrentIndicator() {
         
         let triangle = UIBezierPath(roundedRect: CGRect(x: -1.5, y: 2.0, width: 3.0, height: self.bounds.height - 17.0), byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 1.5, height: 1.5))
-        
-//        triangle.move(to: CGPoint(x: -0.5, y: 0))
-//
-//        triangle.addLine(to: CGPoint(x: 0.5, y: 0))
-//
-//        triangle.addLine(to: CGPoint(x: 0, y: 10))
-//
-//        triangle.close()
-        
-//        let line = CALayer()
-//
-//        line.frame = CGRect(x: 0, y: 0, width: 3.0, height: self.bounds.height - 15.0)
-//
-//        line.cornerRadius = 1.0
-//
-//        line.backgroundColor = UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).cgColor
-        
         self.currentIndicator.path = triangle.cgPath
-
-        self.currentIndicator.fillColor = UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).cgColor
-        
-//        self.currentIndicator.addSublayer(line)
-        
+        self.currentIndicator.fillColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
         self.layer.addSublayer(self.currentIndicator)
-        
     }
 
 }
