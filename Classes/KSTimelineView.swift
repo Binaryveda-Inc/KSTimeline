@@ -7,7 +7,11 @@
 //
 
 import UIKit
-
+public enum RulerFilter: String {
+    case disabled = "disabled"
+    case motionDetection = "motionDetection"
+    case continuous = "continuous"
+}
 @objc public protocol KSTimelineDelegate: NSObjectProtocol {
     
     func timelineStartScroll(_ timeline: KSTimelineView)
