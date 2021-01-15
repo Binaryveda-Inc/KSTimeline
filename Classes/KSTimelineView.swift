@@ -8,7 +8,6 @@
 
 import UIKit
 public enum RulerFilter: String {
-    case disabled = "disabled"
     case motionDetection = "motionDetection"
     case continuous = "continuous"
 }

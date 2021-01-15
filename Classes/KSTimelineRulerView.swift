@@ -20,7 +20,7 @@ import UIKit
     
     var dataSource: KSTimelineRulerEventDataSource?
     
-    public var filterType: RulerFilter = .disabled
+    public var filterType: RulerFilter = .motionDetection
     
     var drawWave: Bool = false {
         
@@ -73,14 +73,15 @@ import UIKit
             let start_x = (unit_hour_width * CGFloat(start_hour)) + (unit_minute_width * CGFloat(start_minute)) + (unit_second_width * CGFloat(start_second)) + (padding / 2)
 
             let end_x = (unit_hour_width * CGFloat(end_hour)) + (unit_minute_width * CGFloat(end_minute)) + (unit_second_width * CGFloat(end_second)) + (padding / 2)
-            
-            switch(filterType){
-                case .disabled:
-                    UIColor(red: 199.0/255.0, green: 199.0/255.0, blue: 199.0/255.0, alpha: 1.0).setFill()
-                case .motionDetection:
-                    UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).setFill()
-                case .continuous:
-                    UIColor(red: 248.0/255.0, green: 219.0/255.0, blue: 158.0/255.0, alpha: 1.0).setFill()
+            if(self.isDisabled){
+                UIColor(red: 199.0/255.0, green: 199.0/255.0, blue: 199.0/255.0, alpha: 1.0).setFill()
+            }else{
+                switch(filterType){
+                    case .motionDetection:
+                        UIColor(red: 123.0/255.0, green: 176.0/255.0, blue: 241.0/255.0, alpha: 1.0).setFill()
+                    case .continuous:
+                        UIColor(red: 248.0/255.0, green: 219.0/255.0, blue: 158.0/255.0, alpha: 1.0).setFill()
+                }
             }
             
             UIRectFill(CGRect(x: start_x, y: rect.size.height - 28.0 - unit_gap_height, width: end_x - start_x, height: 28.0))
@@ -130,25 +131,17 @@ import UIKit
         let text_width = CGFloat(36)
         
         let text_height = CGFloat(12)
-        switch(filterType){
-            case .disabled:
-                UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 0.7).setFill()
-            case .motionDetection:
-                UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
-            case .continuous:
-                UIColor(red: 250.0/255.0, green: 234.0/255.0, blue: 200.0/255.0, alpha: 0.7).setFill()
-        }
-        
-<<<<<<< HEAD
-        UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 10.0))
-=======
         if(self.isDisabled){
-            UIColor(red: 232.0/255.0, green: 232.0/255.0, blue: 232.0/255.0, alpha: 0.7).setFill()
+            UIColor(red: 237.0/255.0, green: 237.0/255.0, blue: 237.0/255.0, alpha: 0.7).setFill()
         }else{
-            UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
+            switch(filterType){
+                case .motionDetection:
+                    UIColor(red: 215.0/255.0, green: 231.0/255.0, blue: 247.0/255.0, alpha: 0.7).setFill()
+                case .continuous:
+                    UIColor(red: 250.0/255.0, green: 234.0/255.0, blue: 200.0/255.0, alpha: 0.7).setFill()
+            }
         }
         UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 28.0))
->>>>>>> 58ec4f7914686fa6aecf1e9ee0b4d99a19814e0d
 
         if show_hour == true {
 
