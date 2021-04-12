@@ -141,7 +141,7 @@ import UIKit
                     UIColor(red: 250.0/255.0, green: 234.0/255.0, blue: 200.0/255.0, alpha: 0.7).setFill()
             }
         }
-        UIRectFill(CGRect(x: extra_padding, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width - padding, height: 28.0))
+        UIRectFill(CGRect(x: 0, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width , height: 28.0))
 
         if show_hour == true {
 
