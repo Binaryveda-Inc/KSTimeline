@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7p-18-MgK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="k7p-18-MgK">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="yyyy-MM-dd'T'HH:mm:ssZ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIF-3F-oSJ">
-                                <rect key="frame" x="0.0" y="304.5" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="294.5" width="375" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="O2S-P9-Jj7"/>
                                 </constraints>
@@ -26,10 +26,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dT7-Oq-Jdy" customClass="KSTimelineView" customModule="KSTimeline">
-                                <rect key="frame" x="0.0" y="325.5" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="315.5" width="375" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Kxa-DG-T0I"/>
+                                    <constraint firstAttribute="height" constant="80" id="Kxa-DG-T0I"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="contentWidth">
@@ -38,6 +38,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6ED-Ma-Onx"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NIF-3F-oSJ" firstAttribute="bottom" secondItem="dT7-Oq-Jdy" secondAttribute="top" id="4gx-27-Zdr"/>
@@ -47,7 +48,6 @@
                             <constraint firstItem="dT7-Oq-Jdy" firstAttribute="trailing" secondItem="6ED-Ma-Onx" secondAttribute="trailing" id="aZg-zR-vmv"/>
                             <constraint firstItem="dT7-Oq-Jdy" firstAttribute="centerY" secondItem="6ED-Ma-Onx" secondAttribute="centerY" id="eKT-gQ-fQS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6ED-Ma-Onx"/>
                     </view>
                     <connections>
                         <outlet property="currentTime" destination="NIF-3F-oSJ" id="RoL-mJ-xUT"/>
@@ -169,7 +169,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDa-wG-fMa" userLabel="Previous">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDa-wG-fMa" userLabel="Previous">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="rZG-Ab-ycf"/>
@@ -179,7 +179,7 @@
                                             <action selector="didPressPreviousVideoBtn:" destination="OYh-Xa-9b1" eventType="touchUpInside" id="5Ja-Zq-ipP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-nM-6X7" userLabel="Next">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-nM-6X7" userLabel="Next">
                                         <rect key="frame" x="329" y="0.0" width="46" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="Lkb-PM-xTA"/>
@@ -216,6 +216,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="iaO-Tr-E94"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7tD-ew-qvR" firstAttribute="trailing" secondItem="iaO-Tr-E94" secondAttribute="trailing" id="6qr-8T-5Ec"/>
@@ -229,7 +230,6 @@
                             <constraint firstItem="YFm-AN-BpP" firstAttribute="leading" secondItem="iaO-Tr-E94" secondAttribute="leading" id="pLS-NO-T9E"/>
                             <constraint firstItem="7tD-ew-qvR" firstAttribute="leading" secondItem="iaO-Tr-E94" secondAttribute="leading" id="tyS-aN-jNc"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iaO-Tr-E94"/>
                     </view>
                     <navigationItem key="navigationItem" title="Demo2" id="TjN-8R-zUa">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="play" id="Z3a-ex-Drv">

@@ -331,7 +331,7 @@ extension UIScreen {
     
     internal func setupCurrentIndicator() {
         
-        let triangle = UIBezierPath(roundedRect: CGRect(x: -1.5, y: 2.0, width: 3.0, height: self.bounds.height - 17.0), byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 1.5, height: 1.5))
+        let triangle = UIBezierPath(roundedRect: CGRect(x: -1.5, y: 4.0, width: 3.0, height: self.bounds.height - 24.0), byRoundingCorners: [.topLeft, .topRight, .bottomLeft, .bottomRight], cornerRadii: CGSize(width: 1.5, height: 1.5))
         self.currentIndicator.path = triangle.cgPath
         self.currentIndicator.fillColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
         self.layer.addSublayer(self.currentIndicator)

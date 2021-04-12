@@ -84,7 +84,7 @@ import UIKit
                 }
             }
             
-            UIRectFill(CGRect(x: start_x, y: rect.size.height - 28.0 - unit_gap_height, width: end_x - start_x, height: 28.0))
+            UIRectFill(CGRect(x: start_x, y: rect.size.height - 48.0 - unit_gap_height, width: end_x - start_x, height: 48.0))
             
         }
         
@@ -110,7 +110,7 @@ import UIKit
 
 //        let unit_sec_height = unit_minute_height / 2
         
-        let unit_sec_height = CGFloat(28.0)
+        let unit_sec_height = CGFloat(48.0)
 
         let show_hour = unit_hour_width > 10 ? true : false
 
@@ -141,7 +141,7 @@ import UIKit
                     UIColor(red: 250.0/255.0, green: 234.0/255.0, blue: 200.0/255.0, alpha: 0.7).setFill()
             }
         }
-        UIRectFill(CGRect(x: 0, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width , height: 28.0))
+        UIRectFill(CGRect(x: 0, y: rect.size.height - unit_sec_height - unit_gap_height, width: rect.size.width , height: 48.0))
 
         if show_hour == true {
 
