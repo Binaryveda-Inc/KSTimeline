@@ -101,9 +101,9 @@ extension UIScreen {
 
 @IBDesignable open class KSTimelineView: UIView {
     
-    public var delegate: KSTimelineDelegate?
+    public weak var delegate: KSTimelineDelegate?
     
-    public var datasource: KSTimelineDatasource?
+    public weak var datasource: KSTimelineDatasource?
     
     public var basedDate: Date!
     
